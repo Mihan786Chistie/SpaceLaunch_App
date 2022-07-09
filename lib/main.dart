@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_launch2/utils/themes.dart';
 import 'pages/home_page.dart';
 import 'utils/routes.dart';
 
@@ -15,16 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SpaceLaunch2',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: MyThemes.lightTheme(),
+      darkTheme: MyThemes.darkTheme(),
       routes: {
-        '/': (context) => HomePage(),
-        TabRoutes.homeRoute: (context) => HomePage(),
+        TabRoutes.homeRoute: (context) =>const HomePage(),
       },
       home: const HomePage(),
     );
